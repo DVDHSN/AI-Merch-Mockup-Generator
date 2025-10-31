@@ -93,7 +93,9 @@ Using the application is straightforward:
 4.  **Adjust Logo Position**: Use the sliders for "Logo Size", "Horizontal Position", and "Vertical Position" to place the logo exactly where you want it on the t-shirt.
 5.  **Generate**: Click the **"Generate Mockup"** button and wait for the AI service to create your image. The final mockup will appear in the output panel.
 
-![Example Output](https://raw.githubusercontent.com/DVDHSN/AI-Merch-Mockup-Generator/main/assets/example-1.png)
+![Example Output]:
+<img width="512" height="512" alt="generated-image (1)" src="https://github.com/user-attachments/assets/bd46ac69-7fce-41a2-9f6b-77a831c3def5" />
+
 
 ## 🤝 Contributing
 

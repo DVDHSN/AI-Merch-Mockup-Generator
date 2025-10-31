@@ -1,115 +1,114 @@
-# AI Merch Mockup Generator
+# 🤖 AI Merch Mockup Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.25+-red.svg)](https://streamlit.io/)
-[![Gemini AI Studio](https://img.shields.io/badge/Gemini-AI%20Studio-brightgreen.svg)](https://ai.google.com/)
+An open-source, AI-powered tool to generate realistic mockups for your merchandise designs in seconds. Simply upload your logo, describe the scene, and let AI create a unique, high-quality image of a model wearing your design.
 
-An interactive web application that leverages the Gemini to generate unique, AI-powered designs and create realistic T-shirt mockups instantly.
+![Demo GIF](https://raw.githubusercontent.com/DVDHSN/AI-Merch-Mockup-Generator/main/assets/demo.gif)
 
----
+## 📄 Description
 
-## 📝 Description
+The AI Merch Mockup Generator is a powerful yet easy-to-use application designed for creators, designers, and e-commerce entrepreneurs. It leverages the capabilities of state-of-the-art text-to-image AI via an external API to eliminate the need for expensive photoshoots and complex design software.
 
-This Streamlit application provides a seamless experience for creating merchandise mockups. Users can simply describe a design concept in plain English, and the app utilizes the power of DALL-E 3 to generate a corresponding image. This newly created design is then automatically placed onto a T-shirt template, producing a high-quality, realistic product mockup.
+With this tool, you can:
+- Instantly visualize your t-shirt, hoodie, or other apparel designs on AI-generated models.
+- Create diverse and unique promotional materials for your online store or social media.
+- Experiment with different styles, settings, and model appearances using simple text prompts.
 
-This tool is perfect for:
--   **Entrepreneurs** in the print-on-demand space looking to quickly prototype new ideas.
--   **Designers** seeking inspiration or a rapid visualization tool.
--   **Marketers** who need to create compelling product visuals for social media or ad campaigns.
--   **Anyone** who wants to bring their creative ideas to life on merchandise without needing complex design software.
+The application intelligently removes the background from your logo, generates a base image according to your prompt via the AI service, and seamlessly overlays your design onto the apparel, giving you full control over its size and position.
 
 ## ✨ Key Features
 
--   **Text-to-Image Generation:** Utilizes the state-of-the-art DALL-E 3 API to convert text prompts into high-quality, unique designs.
--   **Automatic Mockup Creation:** Intelligently places the generated design onto a T-shirt template.
--   **Interactive Web Interface:** A simple and intuitive UI built with Streamlit makes the entire process effortless.
--   **Secure API Key Handling:** Safely use your OpenAI API key by loading it from an environment file or entering it into a secure password field in the app's sidebar.
--   **Downloadable Results:** Download the final T-shirt mockup as a PNG file with a single click.
+- **AI-Powered Image Generation**: Connects to an external AI service to create high-resolution, photorealistic images from text prompts.
+- **Automatic Background Removal**: Intelligently removes the background from your uploaded logo for a clean overlay.
+- **Customizable Logo Placement**: Easy-to-use sliders to precisely control the size, horizontal, and vertical position of your logo on the mockup.
+- **Fine-Tuned Control**: Use positive and negative prompts to guide the AI and get the exact scene you envision.
+- **Intuitive Web Interface**: Simple and user-friendly UI built with Gradio, requiring no technical expertise to use.
+- **Open Source**: Free to use, modify, and extend. Fork the repository and make it your own!
 
 ## 🛠️ Tech Stack
 
--   **Framework:** [Streamlit](https://streamlit.io/)
--   **Language:** Python
--   **AI Model API:** [OpenAI DALL-E 3](https://openai.com/dall-e-3)
--   **Core Libraries:**
-    -   `openai`: The official Python client for the OpenAI API.
-    -   `Pillow`: For powerful image processing and manipulation.
-    -   `python-dotenv`: For managing environment variables.
-    -   `requests`: For making HTTP requests to download the generated images.
+This project is built with a powerful stack of open-source technologies:
+
+- **Backend**: Python
+- **External AI Integration**: Interfaces with a third-party AI service via API for image generation and background removal.
+- **Web UI**: Gradio
+- **Image Processing**: Pillow, OpenCV
 
 ## 🚀 Installation & Setup
 
 Follow these steps to get the AI Merch Mockup Generator running on your local machine.
 
-### Prerequisites
+**Prerequisites:**
+- Python 3.8+
+- Git
+- An API key for the integrated AI service.
 
--   Python 3.8 or higher
--   A Gemini API key with access to a Gemini model.
-
-### Step-by-Step Guide
+**Step-by-step Guide:**
 
 1.  **Clone the Repository**
-    ```sh
+    ```bash
     git clone https://github.com/DVDHSN/AI-Merch-Mockup-Generator.git
     cd AI-Merch-Mockup-Generator
     ```
 
-2.  **Create and Activate a Virtual Environment**
-    -   **On macOS/Linux:**
-        ```sh
-        python3 -m venv venv
-        source venv/bin/activate
-        ```
-    -   **On Windows:**
-        ```sh
-        python -m venv venv
-        venv\Scripts\activate
-        ```
+2.  **Create a Virtual Environment (Recommended)**
+    ```bash
+    # For macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+
+    # For Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
 
 3.  **Install Dependencies**
-    ```sh
+    Install the required Python packages using pip.
+    ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Set Up Environment Variables**
-    Create a file named `.env` in the root directory of the project and add your OpenAI API key:
+4.  **Configure API Key**
+    Create a `.env` file in the project root and add your API key for the external AI service:
     ```
-    OPENAI_API_KEY="your-gemini-api-key-here"
+    AI_API_KEY="YOUR_API_KEY_HERE"
     ```
-    This step is recommended for security. Alternatively, you can enter the key directly in the app's UI.
 
 5.  **Run the Application**
-    ```sh
-    streamlit run app.py
+    ```bash
+    python app.py
     ```
-    Your web browser should automatically open to the application's URL (usually `http://localhost:8501`).
 
-## 👨‍💻 Usage
+6.  **Access the Web UI**
+    Once the script is running, you will see a local URL in your terminal (usually `http://127.0.0.1:7860`). Open this URL in your web browser to start creating mockups.
 
-Once the application is running, follow these simple steps:
+## 💡 Usage
 
-1.  If you did not set up the `.env` file, enter your OpenAI API key in the text input field in the sidebar.
-2.  In the main text area, type a detailed description of the design you want to generate. Be as descriptive as possible for the best results!
-    -   *Example prompt: "A minimalist line art drawing of a cat wearing glasses, vintage style."*
-3.  Click the **"Generate Mockup"** button.
-4.  Please wait a few moments while the DALL-E 3 API generates your design and the application creates the mockup.
-5.  The final T-shirt mockup will be displayed on the page.
-6.  Click the **"Download Mockup"** button to save the final image as a PNG file to your computer.
+Using the application is straightforward:
+
+1.  **Upload Logo**: Drag and drop or click to upload your logo image (PNG with a transparent background works best).
+2.  **Write a Prompt**: In the "Prompt" text box, describe the model and the scene you want. Be specific for better results.
+    - *Example: "Photo of a young man with blonde hair wearing a plain black t-shirt, standing in a sunny park."*
+3.  **Add a Negative Prompt (Optional)**: In the "Negative Prompt" text box, describe what you want to *avoid* in the image.
+    - *Example: "blurry, logos, text, watermark, extra limbs, poorly drawn, cartoon"*
+4.  **Adjust Logo Position**: Use the sliders for "Logo Size", "Horizontal Position", and "Vertical Position" to place the logo exactly where you want it on the t-shirt.
+5.  **Generate**: Click the **"Generate Mockup"** button and wait for the AI service to create your image. The final mockup will appear in the output panel.
+
+![Example Output](https://raw.githubusercontent.com/DVDHSN/AI-Merch-Mockup-Generator/main/assets/example-1.png)
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have ideas for new features, improvements, or have found a bug, please feel free to contribute.
+Contributions are welcome! If you have an idea for a new feature, find a bug, or want to improve the project, please feel free to contribute.
 
-1.  **Fork** the repository.
-2.  Create a new branch (`git checkout -b feature/YourAmazingFeature`).
-3.  Make your changes and commit them (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/YourAmazingFeature`).
-5.  Open a **Pull Request**.
+1.  **Fork the repository** on GitHub.
+2.  **Clone your forked repository** to your local machine.
+3.  **Create a new branch** for your feature or bug fix: `git checkout -b feature/your-feature-name`.
+4.  **Make your changes** and commit them with a descriptive message.
+5.  **Push your changes** to your forked repository: `git push origin feature/your-feature-name`.
+6.  **Open a Pull Request** on the original repository, detailing the changes you've made.
 
-You can also open an issue with the "bug" or "enhancement" tag.
+Please open an issue first to discuss any significant changes you would like to make.
 
-## 📄 License
+## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/DVDHSN/AI-Merch-Mockup-Generator/blob/main/LICENSE) file for more details.
+This project is licensed under the **Apache 2.0 License**. See the [LICENSE](LICENSE) file for more details.
 ```

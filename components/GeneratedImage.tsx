@@ -5,13 +5,13 @@ import { ProductType } from '../types';
 
 interface GeneratedImageProps {
   generatedImages: string[] | null;
-  isLoading: boolean;
+  loadingState: 'idle' | 'generating_logo' | 'generating_mockups' | 'editing';
   onEdit: (image: string) => void;
   aspectRatio: string;
   productTypes: ProductType[];
 }
 
-const GeneratedImage: React.FC<GeneratedImageProps> = ({ generatedImages, isLoading, onEdit, aspectRatio, productTypes }) => {
+const GeneratedImage: React.FC<GeneratedImageProps> = ({ generatedImages, loadingState, onEdit, aspectRatio, productTypes }) => {
   const [isZipping, setIsZipping] = useState(false);
   
   const aspectRatioStyle = {
@@ -53,11 +53,21 @@ const GeneratedImage: React.FC<GeneratedImageProps> = ({ generatedImages, isLoad
   };
 
 
-  if (isLoading) {
+  const getLoadingText = () => {
+    if (loadingState === 'editing') {
+      return "Applying your edits...";
+    }
+    if (loadingState === 'generating_mockups') {
+      return productTypes.length > 1 ? "Rendering your mockups..." : "Rendering your mockup...";
+    }
+    return "Loading..."; // Fallback
+  };
+
+  if (loadingState === 'generating_mockups' || loadingState === 'editing') {
     return (
       <div className="flex flex-col items-center justify-center text-gray-400 w-full" style={aspectRatioStyle}>
         <LoadingIcon />
-        <p className="mt-4 text-lg animate-pulse">Generating your image(s)...</p>
+        <p className="mt-4 text-lg animate-pulse">{getLoadingText()}</p>
         <p className="text-sm text-gray-500 mt-1">This may take a moment.</p>
       </div>
     );

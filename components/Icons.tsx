@@ -51,32 +51,49 @@ export const ResetIcon: React.FC = () => (
 );
 
 export const SizeIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l4 4m12-4h-4m0 0v4m4-4l-4 4M4 16v4m0 0h4m-4 0l4-4m12 4h-4m0 0v-4m4 4l-4-4" />
     </svg>
 );
 
 export const OpacityIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 22a10 10 0 100-20 10 10 0 000 20z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 00-10 10h20A10 10 0 0012 2z" />
     </svg>
 );
 
 export const RotateIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 9a9 9 0 0015.65 3.03" />
     </svg>
 );
 
 export const PositionIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-4m0-10V3M4 12H3m10 0h8m-4 8v-1m0-14V3m-4 8H3m14 0h-4M9 3v1m0 14v1m-6-8H3m18 0h-1" />
         <circle cx="12" cy="12" r="3" />
     </svg>
 );
 
+export const TextIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M7 12h10M7 18h4" />
+    </svg>
+);
+
+export const BoldIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 4h7a4 4 0 014 4 4 4 0 01-4 4H6V4zm0 8h8a4 4 0 014 4 4 4 0 01-4 4H6v-8z" />
+    </svg>
+);
+
+export const ItalicIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 4h8m-7 16h8M10 4l4 16" />
+    </svg>
+);
 
 export const ZipIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -98,6 +115,12 @@ export const PlusIcon: React.FC = () => (
     </svg>
 );
 
+export const CloseIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+);
+
 export const TshirtIcon: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full">
     <path strokeLinecap="round" strokeLinejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.122 2.122l7.81-7.81" />
@@ -112,7 +135,7 @@ export const MugIcon: React.FC = () => (
 
 export const HatIcon: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full h-full">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.25 8.25 0 00-8.25 8.25c0 1.928.704 3.684 1.875 5.063l2.51-2.225.569-9.47 5.227 7.917-3.286-.672zm0 0V2.25m0 0c1.268 0 2.474.19 3.622.543m-3.622-.543C10.732 2.44 9.526 2.25 8.25 2.25m5.636 12.063l-2.51 2.225-.569-9.47 5.227 7.917-3.286-.672z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.25 8.25 0 00-8.25 8.25c0 1.928.704 3.684 1.875 5.063l2.51-2.225.569-9.47 5.227 7.917-3.286-.672zm0 0V2.25m0 0c1.268 0 2.474 .19 3.622 .543m-3.622-.543C10.732 2.44 9.526 2.25 8.25 2.25m5.636 12.063l-2.51 2.225-.569-9.47 5.227 7.917-3.286-.672z" />
   </svg>
 );
 

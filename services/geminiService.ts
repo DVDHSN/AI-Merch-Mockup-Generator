@@ -55,29 +55,27 @@ export const editImage = async (base64Image: string, mimeType: string, prompt: s
 
 
 /**
- * Generates an image from a text prompt using Imagen.
+ * Generates image(s) from a text prompt using Imagen.
  * @param prompt The text prompt describing the image.
  * @param aspectRatio The desired aspect ratio of the image.
- * @returns The base64 encoded string of the generated image, or null if no image was generated.
+ * @param numberOfImages The number of images to generate.
+ * @returns An array of base64 encoded strings of the generated images.
  */
-export const generateImage = async (prompt: string, aspectRatio: AspectRatio): Promise<string | null> => {
+export const generateImage = async (prompt: string, aspectRatio: AspectRatio, numberOfImages: number = 1): Promise<string[]> => {
   try {
     const response = await ai.models.generateImages({
       model: 'imagen-4.0-generate-001',
       prompt: prompt,
       config: {
-        numberOfImages: 1,
+        numberOfImages: numberOfImages,
         outputMimeType: 'image/png',
         aspectRatio: aspectRatio,
       },
     });
 
-    const base64ImageBytes: string | undefined = response.generatedImages[0]?.image.imageBytes;
-    if (base64ImageBytes) {
-      return base64ImageBytes;
-    }
-    
-    return null;
+    return response.generatedImages
+      .map(img => img.image.imageBytes)
+      .filter((bytes): bytes is string => !!bytes);
 
   } catch (error) {
     console.error("Error calling Imagen API:", error);
@@ -86,11 +84,11 @@ export const generateImage = async (prompt: string, aspectRatio: AspectRatio): P
 };
 
 /**
- * Generates a logo from a text prompt using Imagen.
+ * Generates logo variations from a text prompt using Imagen.
  * @param prompt The text prompt describing the logo.
- * @returns The base64 encoded string of the generated logo, or null if no image was generated.
+ * @returns An array of base64 encoded strings of the generated logos.
  */
-export const generateLogo = async (prompt: string): Promise<string | null> => {
+export const generateLogo = async (prompt: string): Promise<string[]> => {
     const fullPrompt = `A modern, minimalist vector logo of ${prompt}. Centered, on a transparent background, high resolution, suitable for merchandise.`;
-    return generateImage(fullPrompt, '1:1');
+    return generateImage(fullPrompt, '1:1', 4);
 };
